@@ -1,0 +1,4 @@
+#%Module1.0
+setenv BLCRHOME /opt/blcr/VERSION
+prepend-path PATH /opt/blcr/VERSION/bin
+prepend-path LD_LIBRARY_PATH /opt/blcr/VERSION/lib

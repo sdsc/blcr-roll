@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="no"?>
+
+<kickstart>
+
+<description>
+Berkeley Labs Checkpoint Restart
+BLCR
+http://crd.lbl.gov/groups-depts/ftg/projects/current-projects/BLCR
+</description>
+
+<copyright>
+Copyright (c) 2000 - 2011 The Regents of the University of California.
+All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
+</copyright>
+
+<changelog>
+</changelog>
+
+<package>blcr</package>
+<package>blcr-modules</package>
+
+<post>
+<file name="/etc/rc.d/rocksconfig.d/post-97-blcr" perms="0755">
+#!/bin/sh
+kkos=`find /opt/blcr -name blcr_imports.ko | head -1`
+if test -n "$kkos"; then
+  /bin/cp $kkos /lib/modules/`uname -r`/extra/
+  /sbin/depmod -a
+  /sbin/modprobe blcr_imports
+fi
+kos=`find /opt/blcr -name blcr.ko | head -1`
+if test -n "$kos"; then
+  /bin/cp $kos /lib/modules/`uname -r`/extra/
+  /sbin/depmod -a
+  /sbin/modprobe blcr
+fi
+</file> 
+</post>
+</kickstart>
