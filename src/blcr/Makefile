@@ -72,14 +72,10 @@ build: $(SRC_DIRS)
 	
 install::
 	mkdir -p -m 755 $(ROOT)/$(PKGROOT)
-	mkdir -p $(PKGROOT)
-	mount --bind $(ROOT)/$(PKGROOT) $(PKGROOT)
 	( \
 	  cd $(SOURCE_DIR); \
-	  $(MAKE) install; \
+	  $(MAKE) prefix=$(ROOT)/$(PKGROOT) install \
 	)
-	umount $(PKGROOT)
-	rmdir -p $(PKGROOT) || true
 	@echo "::: Package $(NAME) install complete :::"
 
 clean::
