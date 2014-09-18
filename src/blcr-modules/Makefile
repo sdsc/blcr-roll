@@ -1,11 +1,12 @@
-# --------------------------------------------------- -*- Makefile -*- --
-# $Id: Makefile,v 1.1 2012/07/11 18:50:41 jhayes Exp $
+#
+# $Id$
 #
 # @Copyright@
 # 
 # 				Rocks(r)
 # 		         www.rocksclusters.org
-# 		       version 6.1 (Emerald Boa)
+# 		         version 5.6 (Emerald Boa)
+# 		         version 6.1 (Emerald Boa)
 # 
 # Copyright (c) 2000 - 2013 The Regents of the University of California.
 # All rights reserved.	
@@ -53,8 +54,10 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # 
 # @Copyright@
+#
+# $Log$
+#
 
-PKGROOT = /opt/modulefiles/applications/blcr
 REDHAT.ROOT = $(CURDIR)/../../
 
 -include $(ROCKSROOT)/etc/Rules.mk
@@ -63,11 +66,11 @@ include Rules.mk
 build:
 
 install::
-	  mkdir -p $(ROOT)/$(PKGROOT)
-	  cp blcr.module $(ROOT)/$(PKGROOT)/$(VERSION)
-	  cp blcr.version $(ROOT)/$(PKGROOT)/.version.$(VERSION)
-	  perl -pi -e 's/VERSION/$(VERSION)/g' $(ROOT)/$(PKGROOT)/$(VERSION)
-	  perl -pi -e 's/VERSION/$(VERSION)/g' $(ROOT)/$(PKGROOT)/.version.$(VERSION)
-	  ln -s $(PKGROOT)/.version.$(VERSION) $(ROOT)/$(PKGROOT)/.version
+	mkdir -p $(ROOT)/$(PKGROOT)
+	cp *.module $(ROOT)/$(PKGROOT)/$(VERSION)
+	cp *.version $(ROOT)/$(PKGROOT)/.version.$(VERSION)
+	perl -pi -e 's#VERSION#$(VERSION)#g' \
+	  $(ROOT)/$(PKGROOT)/.version.$(VERSION) $(ROOT)/$(PKGROOT)/$(VERSION)
+	ln -s $(PKGROOT)/.version.$(VERSION) $(ROOT)/$(PKGROOT)/.version
 
 clean::
