@@ -1,6 +1,9 @@
-NAME    = blcr-modules
-VERSION = 0.8.5
-RELEASE = 0
-PKGROOT = /opt/modulefiles/applications/blcr
+NAME        = blcr-modules
+RELEASE     = 1
+PKGROOT     = /opt/modulefiles/applications/blcr
 
-RPM.EXTRAS = AutoReq:No
+VERSION_SRC = $(REDHAT.ROOT)/src/blcr/version.mk
+VERSION_INC = version.inc
+include $(VERSION_INC)
+
+RPM.EXTRAS  = AutoReq:No
