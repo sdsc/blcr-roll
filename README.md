@@ -25,19 +25,17 @@ None.
 
 ## Building
 
-To build the blcr-roll, execute these instructions on a Rocks development machine
+To build the blcr-roll, execute this on a Rocks development machine
 (e.g., a frontend or development appliance):
 
 ```shell
-% make default 2>&1 | tee build.log
-% grep "RPM build error" build.log
+% make 2>&1 | tee build.log
 ```
 
-If nothing is returned from the grep command then the roll should have been
-created as... `blcr-roll-*.iso`. If you built the roll on a Rocks frontend then
-proceed to the installation step. If you built the roll on a Rocks development
-appliance you need to copy the roll to your Rocks frontend before continuing
-with installation.
+A successful build will create the file `blcr-*.disk1.iso`.  If you built the
+roll on a Rocks frontend, proceed to the installation step. If you built the
+roll on a Rocks development appliance, you need to copy the roll to your Rocks
+frontend before continuing with installation.
 
 
 ## Installation
@@ -62,10 +60,9 @@ files in:
 ## Testing
 
 The blcr-roll includes a test script which can be run to verify proper installation
-of the blcr-roll documentation, binaries and module files. To run the test scripts
+of the roll documentation, binaries and module files. To run the test scripts
 execute the following command(s):
 
 ```shell
 % /root/rolltests/blcr.t 
 ```
-
