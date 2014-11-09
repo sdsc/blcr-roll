@@ -3,18 +3,17 @@
 <kickstart>
 
 <description>
-Berkeley Labs Checkpoint Restart
-BLCR
+BLCR - Berkeley Labs Checkpoint Restart
 http://crd.lbl.gov/groups-depts/ftg/projects/current-projects/BLCR
 </description>
 
 <copyright>
-Copyright (c) 2000 - 2011 The Regents of the University of California.
+Copyright (c) 2000 - 2014 The Regents of the University of California.
 All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
 </copyright>
 
-<package>blcr</package>
-<package>blcr-modules</package>
-<package>blcr-rc</package>
+<package>sdsc-blcr</package>
+<package>sdsc-blcr-modules</package>
+<package>sdsc-blcr-rc</package>
 
 </kickstart>

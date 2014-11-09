@@ -1,11 +1,11 @@
-NAME           = blcr
+NAME           = sdsc-blcr
 VERSION        = 0.8.5
-RELEASE        = 0
+RELEASE        = 1
 PKGROOT        = /opt/blcr/$(VERSION)
 
 SRC_SUBDIR     = blcr
 
-SOURCE_NAME    = $(NAME)
+SOURCE_NAME    = blcr
 SOURCE_SUFFIX  = tar.gz
 SOURCE_VERSION = $(VERSION)
 SOURCE_PKG     = $(SOURCE_NAME)-$(SOURCE_VERSION).$(SOURCE_SUFFIX)

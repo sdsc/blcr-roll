@@ -1,6 +1,6 @@
-NAME       = blcr-roll-test
+NAME       = sdsc-blcr-roll-test
 VERSION    = 1
-RELEASE    = 0
+RELEASE    = 1
 PKGROOT    = /root/rolltests
 
 RPM.EXTRAS = AutoReq:No
