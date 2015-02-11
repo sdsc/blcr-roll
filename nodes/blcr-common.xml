@@ -15,5 +15,6 @@ All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
 <package>sdsc-blcr</package>
 <package>sdsc-blcr-modules</package>
 <package>sdsc-blcr-rc</package>
+<package>sdsc-blcr-roll-test</package>
 
 </kickstart>
