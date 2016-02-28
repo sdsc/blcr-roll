@@ -1,6 +1,6 @@
 NAME           = sdsc-blcr
 VERSION        = 0.8.5
-RELEASE        = 1
+RELEASE        = 2
 PKGROOT        = /opt/blcr/$(VERSION)
 
 SRC_SUBDIR     = blcr
