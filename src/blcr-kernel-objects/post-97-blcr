@@ -1,0 +1,8 @@
+#!/bin/sh
+/sbin/depmod -a
+for ko in blcr_imports blcr; do
+  if find /lib/modules -name ${ko}.ko; then
+    /sbin/modprobe ${ko}
+  fi
+done
+# /bin/rm $0

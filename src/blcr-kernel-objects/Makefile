@@ -56,13 +56,32 @@
 
 REDHAT.ROOT = $(CURDIR)/../../
 
--include $(ROCKSROOT)/etc/Rules.mk
-include Rules.mk
+include $(ROCKSROOT)/etc/Rules.mk
+include $(SDSCDEVEL)/Pull.mk
+include $(SDSCDEVEL)/Rules.mk
+
+KO_PKGROOT = /lib/modules/$(KERNEL)/extra
+RC_PKGROOT = /etc/rc.d/rocksconfig.d
+
+$(NAME).spec: DESCRIPTION LICENSE
+
+DESCRIPTION:
+	( \
+	  $(DESCRIBE_PKG); \
+	  $(DESCRIBE_CC) \
+	) > $@
+
+LICENSE: $(SRC_DIRS)
+	# Same as sdsc-blcr package
+	echo 'GPL and LGPL' > $@
 
 build:
 
 install::
-	mkdir -p $(ROOT)/$(PKGROOT)
-	cp post* $(ROOT)/$(PKGROOT)/
+	mkdir -p -m 755 $(ROOT)/$(KO_PKGROOT) $(ROOT)/$(RC_PKGROOT)
+	cp `find $(REDHAT.ROOT)/BUILD -name \*.ko` $(ROOT)/$(KO_PKGROOT)
+	cp post* $(ROOT)/$(RC_PKGROOT)/
 
 clean::
+	rm -fr $(SOURCE_DIR) DESCRIPTION LICENSE
+
