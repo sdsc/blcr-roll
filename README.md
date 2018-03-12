@@ -1,5 +1,9 @@
 # SDSC "blcr" roll
 
+### THIS ROLL HAS BEEN DEPRECATED
+
+The blcr-roll is deprecated; SDSC no longer supports or develops it.
+
 ## Overview
 
 This Rocks roll bundles the blcr checkpointing library.  For more information
